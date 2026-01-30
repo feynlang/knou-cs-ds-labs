@@ -22,7 +22,7 @@ class Bandit:
         if a < self.rates[arm]:
             return 1 #보상 R
         else:
-            return 0
+            return 0 #보상 R
 
 # 2. Agent 클래스 구현(행동가치추정치 계산)
 class Agent:
@@ -79,3 +79,31 @@ plt.ylabel("Rates")
 plt.xlabel("count")
 plt.plot(rates)
 plt.show()
+
+# 하이퍼파라미터 튜닝 <-- 평균적인 특성 파악
+# 어떤 데이터를 남겨야?: 승률 -> 보상합/액션횟수합
+runs = 200
+steps = 1000
+epsilon = 0.1 #하이퍼파라미터
+rate_all = np.zeros((runs, steps)) #runs당 승률
+
+for i in range(runs):
+    bandit = Bandit()
+    agent = Agent()
+    reward_total = 0 #한 runs에 누적 보상합
+    rates = [] #steps당 승률
+
+    for j in range(steps):
+        action = agent.action()
+        reward = bandit.play(action)
+        agent.update(action, reward)
+        reward_total += reward
+        rates.append(reward_total/j+1)
+
+    rate_all[i] = rates
+
+# 전체 runs당 승률 평균
+rate_all_avg = np.average(rate_all, axis=0)
+
+plt.xlabel('Rate')
+plt.ylabel('')
