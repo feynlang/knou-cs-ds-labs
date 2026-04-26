@@ -539,4 +539,26 @@ Node.js를 쓸지 Python(FastAPI)·Java(Spring)·Go를 쓸지는 **네가 과제
 # 커리큘럼
 1. 자바, 간단crud, 데이터베이스, git
 2. 스프링부트(IoC,Web,JPA,시큐리티), 도커(스프링부트 호스팅) -> Q&A게시판
-3. 프론트엔드 바이브코딩(html,css,js,react,next.js),
+3. 프론트엔드 바이브코딩(html,css,js,react,next.js), Spring Boot REST API(API서버,React연동)
+4. AWS, CI/CD, 무중단배포, PG결제모듈, Spring Batch(배치작업), 대용량 트래픽처리(db&코드 최적화, 트래픽분산)
+5. 실무 프로젝트
+6. 실무 프로젝트
+
+화면 설계서 및 워크플로우 작성
+DB 설계 (JPA 기반 모델 설계)
+Spring Boot를 통해 REST API 설계 및 구현
+클라이언트 (React/Svelte/Thymeleaf 택1) 구현
+
+Hibernate 및 QueryDSL을 이용한 검색 서비스 강화
+• 강의 검색 기능 구현
+• 강사명 검색 기능 구현
+• 수강생 검색 기능 구현
+• 수강 기록 검색 기능 구현
+• 리뷰 검색 기능 구현
+
+AWS Kubernetes 기반 무중단 배포 구축
+• AWS EC2를 3개 이상 띄워서 Kubernetes 클러스터 구축
+• Kubernetes 네트워크(칼리코 등) 구축
+• NGINX 세팅(API 게이트웨이 역할)
+• GitHub ACTION CI/CD 파이프라인 구축, Kubernetes 기반 무중단 배포 구현 (롤링 업데 이트 방식의 무중단 배포)
+• 모니터링 및 로깅 시스템 구축 (CloudWatch 등)
